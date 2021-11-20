@@ -1,19 +1,18 @@
 ---
 version: 1
 
-# build_arg_defaults:
-#   EE_BASE_IMAGE: 'quay.io/ansible/ansible-runner:stable-2.11-latest'
+build_arg_defaults:
+  EE_BASE_IMAGE: "registry.redhat.io/ansible-automation-platform-20-early-access/ee-supported-rhel8:2.0.1-11"
+  EE_BUILDER_IMAGE: "registry.redhat.io/ansible-automation-platform-20-early-access/ansible-builder-rhel8:2.0.0-15"
 
-ansible_config: 'ansible.cfg'
+ansible_config: "ansible.cfg"
 
 dependencies:
   galaxy: requirements.yml
   python: requirements.txt
-#   system: bindep.txt
 
 # additional_build_steps:
 #   prepend: |
-#     RUN whoami
-#     RUN cat /etc/os-release
+#     RUN echo This is a pre-install command!
 #   append:
 #     - RUN echo This is a post-install command!
