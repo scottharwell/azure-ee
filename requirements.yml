@@ -3,3 +3,5 @@ collections:
   - azure.azcollection
   - servicenow.itsm
   - servicenow.servicenow
+  - source: /tmp/cloud-azure_roles-0.1.0.tar.gz
+    type: file
