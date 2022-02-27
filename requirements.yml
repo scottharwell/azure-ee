@@ -1,5 +1,5 @@
 ---
 collections:
   - azure.azcollection
-  - source: /tmp/cloud-azure_roles-0.1.0.tar.gz
+  - source: /tmp/cloud-azure_roles-1.0.0.tar.gz
     type: file
