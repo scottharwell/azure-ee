@@ -1,5 +1,6 @@
 ---
 collections:
   - azure.azcollection
-  - source: /tmp/cloud-azure_roles-1.0.0.tar.gz
-    type: file
+  - name: https://github.com/ansible-collections/cloud.azure_roles.git
+    type: git
+    version: main
