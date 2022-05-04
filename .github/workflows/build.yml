@@ -43,10 +43,10 @@ jobs:
           password: ${{ secrets.QUAY_PASSWORD }}
 
       - name: Install ansible-builder
-        run: sudo pip3 install ansible-navigator
+        run: sudo pip3 install ansible-builder
 
       - name: Create the Containerfile file
-        run: ansible-navigator create
+        run: ansible-builder create
 
       - name: Create the Dockerfile file
         run: cp context/Containerfile context/Dockerfile
