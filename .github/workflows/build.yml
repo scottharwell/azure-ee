@@ -36,7 +36,6 @@ jobs:
         uses: docker/setup-buildx-action@v1
 
       - name: Log into registry ${{ env.REGISTRY }}
-        if: github.event_name != 'pull_request'
         uses: docker/login-action@v1
         with:
           registry: ${{ env.REGISTRY }}
@@ -44,7 +43,7 @@ jobs:
           password: ${{ secrets.QUAY_PASSWORD }}
 
       - name: Install ansible-builder
-        run: sudo pip3 install -y ansible-navigator
+        run: sudo pip3 install ansible-navigator
 
       - name: Create the Containerfile file
         run: ansible-navigator create
