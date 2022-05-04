@@ -28,6 +28,7 @@ jobs:
             ${{ env.REGISTRY }}/${{ env.REGISTRY_USER }}
           tags: |
             type=semver,pattern={{version}}
+            latest
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
