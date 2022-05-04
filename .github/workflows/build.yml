@@ -10,6 +10,7 @@ on:
 
 env:
   REGISTRY: quay.io
+  REGISTRY_USER: scottharwell
   IMAGE_NAME: azure-execution-env
 
 jobs:
@@ -23,19 +24,10 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          # list of Docker images to use as base name for tags
           images: |
-            name/app
-            ghcr.io/username/app
-          # generate Docker tags based on the following events/attributes
+            ${{ env.REGISTRY }}/${{ env.REGISTRY_USER }}
           tags: |
-            type=schedule
-            type=ref,event=branch
-            type=ref,event=pr
             type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=semver,pattern={{major}}
-            type=sha
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -51,11 +43,20 @@ jobs:
           username: ${{ secrets.QUAY_USERNAME }}
           password: ${{ secrets.QUAY_PASSWORD }}
 
+      - name: Install ansible-builder
+        run: sudo pip3 install -y ansible-navigator
+
+      - name: Create the Containerfile file
+        run: ansible-navigator create
+
+      - name: Create the Dockerfile file
+        run: cp context/Containerfile context/Dockerfile
+
       - name: Build Multiarch Containers
         id: dockerbuild
         uses: docker/build-push-action@v2
         with:
-          context: .
+          context: context/.
           platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ steps.meta.outputs.tags }}
