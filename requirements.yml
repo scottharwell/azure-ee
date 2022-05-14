@@ -2,9 +2,12 @@
 collections:
   - azure.azcollection
   - awx.awx
-  - name: https://github.com/ansible-collections/cloud.azure_roles.git
-    type: git
+roles:
+  - name: cloud.azure_roles
+    src: https://github.com/ansible-collections/cloud.azure_roles.git
+    scm: git
     version: main
-  - name: https://github.com/scottharwell/aoc_demo_setup.git
-    type: git
+  - name: ansible_on_clouds.aoc_demo_setup
+    scm: git
+    src: https://github.com/scottharwell/aoc_demo_setup.git
     version: main
