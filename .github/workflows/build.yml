@@ -43,6 +43,9 @@ jobs:
           username: ${{ secrets.QUAY_USERNAME }}
           password: ${{ secrets.QUAY_PASSWORD }}
 
+      - name: Upgrade PIP
+        run: sudo /usr/bin/python3 -m pip install --upgrade pip
+
       - name: Install ansible-builder
         run: sudo pip3 install ansible-builder
 
