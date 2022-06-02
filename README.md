@@ -1,3 +1,5 @@
+[![Build CI](https://github.com/scottharwell/azure-ee/actions/workflows/build.yml/badge.svg)](https://github.com/scottharwell/azure-ee/actions/workflows/build.yml)
+
 This is a simple execution environment definition that I created to use to test the Microsoft Azure Ansible collection along with other collections and roles used for related automation.
 
 ## Building on an AMD64 Platform Linux or Mac Machine
