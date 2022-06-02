@@ -1,7 +1,9 @@
 ---
 collections:
-  - azure.azcollection
-  - awx.awx
+  - name: azure.azcollection
+    version: 5.0.1
+  - name: awx.awx
+    version: 21.0.0
 roles:
   - name: cloud.azure_roles
     src: https://github.com/ansible-collections/cloud.azure_roles.git
