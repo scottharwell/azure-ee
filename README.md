@@ -1,4 +1,4 @@
-[![Build CI](https://github.com/scottharwell/azure-ee/actions/workflows/build.yml/badge.svg?branch=v1.0.13)](https://github.com/scottharwell/azure-ee/actions/workflows/build.yml)
+[![Build CI](https://github.com/scottharwell/azure-ee/actions/workflows/build.yml/badge.svg?branch=v1.0.14)](https://github.com/scottharwell/azure-ee/actions/workflows/build.yml)
 
 This is a simple execution environment definition that I created to use to test the Microsoft Azure Ansible collection along with other collections and roles used for related automation.
 
