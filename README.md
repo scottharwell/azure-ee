@@ -30,7 +30,7 @@ This requires Docker to build EEs.  Podman does not function with these steps on
 ```bash
 export REGISTRY=quay.io/scottharwell
 export VERSION=0.0.1
-docker buildx build --platform linux/arm64,linux/amd64 -t $REGISTRY/server-setup-ee:$VERSION -t $REGISTRY/server-setup-ee:latest --push .
+docker buildx build --platform linux/arm64,linux/amd64 -t $REGISTRY/azure-ee:$VERSION -t $REGISTRY/azure-ee:latest --push .
 ```
 
 Once the container is deployed to your container registry, then you can pull the EE down to your M1 Mac natively, or to Ansible Controller running on `amd64` machines.
