@@ -3,7 +3,7 @@ collections:
   - name: azure.azcollection
     version: 1.13.0
   - name: awx.awx
-    version: 21.0.0
+    version: 21.1.0
 roles:
   - name: cloud.azure_roles
     scm: git
